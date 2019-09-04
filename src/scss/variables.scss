@@ -1,0 +1,7 @@
+@import '~@angular/material/theming';
+@import 'theming';
+
+@include angular-material-theme($a2t-theme);
+$primary: map-get($a2t-theme, primary);
+
+$accent-text-color: mat-color($primary, 800);

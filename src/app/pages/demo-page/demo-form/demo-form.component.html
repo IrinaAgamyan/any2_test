@@ -1,0 +1,45 @@
+<mat-card class="demo-form-card">
+  <mat-card-header class="a2t-card-title">
+    <mat-card-title>Demo</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="demoForm" class="demo-form">
+      <mat-form-field appearance="outline" class="demo-form-input-wrapper">
+        <mat-label>First name</mat-label>
+        <input formControlName="firstName" matInput placeholder="Your first name">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="demo-form-input-wrapper">
+        <mat-label>Last name</mat-label>
+        <input formControlName="lastName" matInput placeholder="Your last name">
+      </mat-form-field>
+      <div class="demo-form-input-wrapper">
+        <div class="demo-form-input-subheader">Please choose username or email address</div>
+        <mat-form-field appearance="outline">
+          <mat-label>Your username or email address</mat-label>
+          <input formControlName="firstName" matInput placeholder="Username or email address">
+        </mat-form-field>
+      </div>
+      <div class="demo-form-input-wrapper">
+        <div class="demo-form-input-subheader">Please choose your system language</div>
+        <mat-form-field appearance="outline">
+          <mat-label>System language</mat-label>
+          <mat-select formControlName="language">
+            <mat-option *ngFor="let language of languages" [value]="language.value">
+              {{language.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="demo-form-input-wrapper">
+        <mat-checkbox color="primary" formControlName="rememberMe">Remember me</mat-checkbox>
+      </div>
+      <div class="demo-form-input-wrapper">
+        <mat-checkbox color="primary" formControlName="rememberOthers">Remember all others</mat-checkbox>
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="demo-form-footer">
+    <button class="a2t-button" mat-stroked-button (click)="cancel()">Cancel</button>
+    <button class="a2t-button" mat-flat-button (click)="submit()" color="primary">Continue</button>
+  </mat-card-actions>
+</mat-card>

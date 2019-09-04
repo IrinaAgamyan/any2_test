@@ -1,0 +1,45 @@
+@import '~@angular/material/theming';
+
+$a2t-primary-colors: (
+  50: #76ebff,
+  100: #63cfff,
+  200: #4ab4ff,
+  300: #46a6ed,
+  400: #429de0,
+  500: #3988c2,
+  600: #3277aa,
+  700: #2b6692,
+  800: #24557a,
+  900: #1c4360,
+  A100: #61b1d6,
+  A200: #5092b1,
+  A400: #427992,
+  A700: #3a557a,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+
+@include mat-core();
+
+$a2t-primary: mat-palette($a2t-primary-colors, 900);
+$a2t-accent:  mat-palette($mat-pink, A200, A100, A400);
+$a2t-warn:    mat-palette($mat-red);
+
+$a2t-theme: mat-light-theme($a2t-primary, $a2t-accent, $a2t-warn);
+
+@include angular-material-theme($a2t-theme);
